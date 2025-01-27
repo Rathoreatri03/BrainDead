@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Integration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        .chat-container {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Our Chatbot</h1>
+    <p>Interact with our AI assistant below.</p>
+
+    <div class="chat-container">
+        <p>Click the chat icon to start a conversation.</p>
+    </div>
+
+    <!-- Botpress Chatbot Scripts -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/01/27/13/20250127131742-K0YH3CUU.js"></script>
+
+    <!-- Initialize the chatbot -->
+    <script>
+        window.botpressWebChat.init({
+            clientId: "74d0d4d6-4f64-4179-8900-b003ed34c362", // Your Client ID
+            host: "https://cdn.botpress.cloud/webchat",
+            botName: "Wolf",
+            showCloseButton: true,
+            showMessageDate: true,
+            enableTranscriptDownload: true,
+            containerWidth: "100%",
+            layoutWidth: "350px",
+            hideWidget: false,
+        });
+    </script>
+
+</body>
+</html>
