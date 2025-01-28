@@ -213,3 +213,47 @@ if reasoning:
 # Build PDF
 doc.build(story)
 print(f"PDF report generated: {pdf_path}")
+
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+
+# Email configuration
+sender_email = "aceswiftsteadyfast@gmail.com"
+sender_password = "yhry hpqh udmx drls"
+receiver_email = "garvkumar68@gmail.com"
+subject = "Mental Health Report"
+body = "The PDF of the mental health report is as follows:"
+
+# Email message setup
+msg = MIMEMultipart()
+msg['From'] = sender_email
+msg['To'] = receiver_email
+msg['Subject'] = subject
+
+# Attach email body
+msg.attach(MIMEText(body, 'plain'))
+
+# Attach PDF
+pdf_path = "Sentiment_Analysis_Report.pdf"
+with open(pdf_path, "rb") as attachment:
+    part = MIMEBase('application', 'octet-stream')
+    part.set_payload(attachment.read())
+    encoders.encode_base64(part)
+    part.add_header(
+        "Content-Disposition",
+        f"attachment; filename={os.path.basename(pdf_path)}",
+    )
+    msg.attach(part)
+
+# Send email
+try:
+    with smtplib.SMTP('smtp.gmail.com', 587) as server:
+        server.starttls()  # Start TLS encryption
+        server.login(sender_email, sender_password)
+        server.sendmail(sender_email, receiver_email, msg.as_string())
+        print(f"Email sent successfully to {receiver_email}")
+except Exception as e:
+    print(f"Error occurred while sending email: {e}")
