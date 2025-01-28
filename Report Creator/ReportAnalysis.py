@@ -140,6 +140,31 @@ summary_table.setStyle(TableStyle([
 story.append(summary_table)
 story.append(Spacer(1, 40))
 
+
+# Add Title for Overall Mood
+story.append(Paragraph("Overall Mood/Personality Inference", styles['HeadingStyle']))
+story.append(Spacer(1, 10))
+
+# Table Data for Overall Mood
+mood_data = [["Aspect", "Inference"]]
+mood_data.append([
+    Paragraph("Overall Mood/Personality Inference", styles["NormalStyle"]),
+    f"{overall_mood}"
+])
+
+# Table Styling for Overall Mood Inference
+mood_table = Table(mood_data, colWidths=[5.5 * inch, 2 * inch])  # Adjusted width for new margins
+mood_table.setStyle(TableStyle([
+    ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
+    ('TEXTCOLOR', (0, 0), (-1, 0), colors.darkred),
+    ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+    ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+    ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+    ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+    ('GRID', (0, 0), (-1, -1), 1, colors.black),
+]))
+story.append(mood_table)
+
 # Add Page Break after Sentiment Distribution Chart
 story.append(PageBreak())
 
