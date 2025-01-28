@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Register form</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <span class="rotate-bg"></span>
+        <span class="rotate-bg2"></span>
+
+        <!-- Login Form -->
+        <div class="form-box login">
+            <h2 class="title animation" style="--i:0; --j:21">Login</h2>
+            <form id="login-form">
+
+                <div class="input-box animation" style="--i:1; --j:22">
+                    <input type="email" id="email" required>
+                    <label for="">Email</label>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+
+                <div class="input-box animation" style="--i:2; --j:23">
+                    <input type="password" id="password" required>
+                    <label for="">Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <button type="submit" class="btn animation" style="--i:3; --j:24">Login</button>
+                <div class="linkTxt animation" style="--i:5; --j:25">
+                    <p>Don't have an account? <a href="signup.html" class="register-link">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="form-box register">
+            <h2 class="title animation" style="--i:17; --j:0">Sign Up</h2>
+
+            <form id="register-form">
+                <div class="input-box animation" style="--i:18; --j:1">
+                    <input type="email" id="reg-email" required>
+                    <label for="">Email</label>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+
+                <div class="input-box animation" style="--i:19; --j:2">
+                    <input type="password" id="reg-password" required>
+                    <label for="">Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <button type="submit" class="btn animation" style="--i:21;--j:4">Sign Up</button>
+
+                <div class="linkTxt animation" style="--i:22; --j:5">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Handle the login form submission
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Get registered emails array
+            const registeredEmails = JSON.parse(localStorage.getItem('registeredEmails') || '[]');
+
+            // Check if email exists
+            if (!registeredEmails.includes(email)) {
+                alert("Email not registered. Please sign up first.");
+                return;
+            }
+
+            // Get user data
+            const userData = JSON.parse(localStorage.getItem(email));
+
+            // Check if password matches
+            if (userData && userData.password === password) {
+                // Store current user email
+                localStorage.setItem('userEmail', email);
+
+                // Redirect to home24.html and pass email as a query parameter
+                window.location.href = `home24.html?email=${encodeURIComponent(email)}`;
+            } else {
+                alert("Invalid email or password.");
+            }
+        });
+    </script>
+
+</body>
+</html>

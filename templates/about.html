@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - IQ & Wellness</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #ccecee; /* Set background color */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+      font-weight: bold; /* Make the heading bold */
+      text-align: center; /* Center align the heading */
+      color: #333; /* Set heading color to dark gray */
+      margin-bottom: 30px; /* Add space between heading and paragraphs */
+    }
+
+    .card {
+      margin-bottom: 30px;
+    }
+
+    footer {
+      background-color: #222;
+      margin-top: auto; /* Push the footer to the bottom */
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Animations */
+    .animate__fadeIn {
+      animation: fadeIn 1s ease-in;
+    }
+
+    .animate__fadeIn.animate__delay-1s {
+      animation-delay: 1s;
+    }
+
+    .animate__fadeIn.animate__delay-2s {
+      animation-delay: 2s;
+    }
+
+    .animate__fadeIn.animate__delay-3s {
+      animation-delay: 3s;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .feature-section {
+      background-color: #f5f5f5;
+      padding: 30px 0;
+    }
+
+    .feature-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold; /* Make the 'Key Features' heading bold */
+      color: #003366; /* Set color to very dark blue */
+    }
+
+    .feature-item {
+      background-color: lightgrey; /* Light grey background for all boxes */
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .feature-item h4 {
+      font-weight: bold; /* Make the text bold */
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .col-md-4 {
+      flex: 1 1 calc(33.33% - 30px); /* Ensure all boxes are the same size */
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="animate__animated animate__fadeIn">About Our AI-Powered Mental Wellness Companion</h1>
+    <p class="animate__animated animate__fadeIn animate__delay-1s text-center">
+      Our AI-powered platform is designed to support emotional well-being through personalized mindfulness exercises, guided meditations, and mental health resources based on user preferences and interactions.
+    </p>
+    <div class="row text-center">
+      <div class="col-md-12">
+        <p class="animate__animated animate__fadeIn animate__delay-2s">
+          By analyzing mood patterns through daily check-ins and activity tracking, our AI provides early intervention suggestions to address potential mental health issues. Integration with wearables allows for real-time stress monitoring.
+        </p>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-12">
+        <p class="animate__animated animate__fadeIn animate__delay-3s">
+          The platform offers AI-powered chatbots that provide empathetic and confidential support, ensuring a proactive approach to mental health management. Our user-friendly interface makes accessing these features simple and effective.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature Section to fill the page -->
+  <div class="feature-section">
+    <div class="container">
+      <h2 class="animate__animated animate__fadeIn">Key Features</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-item animate__animated animate__fadeIn animate__delay-1s">
+            <h4>Personalized Mindfulness Exercises</h4>
+            <p>Our platform customizes mindfulness exercises based on individual preferences, ensuring each session is relevant and beneficial.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-item animate__animated animate__fadeIn animate__delay-2s">
+            <h4>AI-Powered Emotional Support</h4>
+            <p>Empathetic chatbots provide real-time emotional support to help users manage stress and anxiety in their daily lives.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-item animate__animated animate__fadeIn animate__delay-3s">
+            <h4>Stress Monitoring Integration</h4>
+            <p>Wearable integrations track stress levels and offer insights on managing stress throughout the day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 IQ & Mental Wellness. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+</body>
+</html>

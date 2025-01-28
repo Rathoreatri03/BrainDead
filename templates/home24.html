@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Landing Page</title>
+    <style>
+        :root {
+            --primary-color: #095d7e;
+            --secondary-color: #ccecee;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            background: white;
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: var(--white);
+            font-weight: bold;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #095d7e;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%; 
+            object-fit: cover;
+        }
+
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: #ccecee;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 4rem;
+            top: 2rem;
+            width: 200px;
+            height: 450px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-content {
+            position: absolute;
+            left: 2rem;
+            top: 4rem;
+            max-width: 500px;
+            font-weight: bold;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-title span {
+            color: var(--primary-color);
+        }
+
+        .chat-bot-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .chat-bot-btn:hover {
+            background-color: #074c65;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--secondary-color);
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #095d7e;
+            text-decoration: underline;
+        }
+
+        /* Floating Circle Decoration */
+        .circle-decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 15px solid var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .circle-1 {
+            top: 2rem;
+            right: 10%;
+        }
+
+        .circle-2 {
+            bottom: 20%;
+            left: 5%;
+        }
+
+        /* Email Section */
+        .email-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .email-input {
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            width: 250px;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .email-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                font-weight: bold;
+            }
+
+            .hero-content {
+                padding: 2rem;
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+
+            .contact-details {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="logo.jpg" alt="Logo">
+                </div>
+                <span>Brain Wizard</span>
+            </div>
+            <div class="nav-links">
+                <a href="mbtiTest.html">Personality Test</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Find the Good Life<br>With <span>Good Health.</span></h1>
+                <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/28/09/20250128094248-MPZ8P9FX.json" class="chat-bot-btn">Click Here to Chat with Bot...</a>
+            </div>
+            <div class="circle-decoration circle-1"></div>
+            <div class="circle-decoration circle-2"></div>
+            <img src="dr.jpg" alt="Health Illustration" class="hero-image">
+        </section>
+
+        <!-- Email Input Section -->
+        <section class="email-section">
+            <h3>Welcome back! Logged In with Email:</h3>
+            <input type="email" class="email-input" id="user-email" placeholder="Enter your email" required readonly>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h3>Contact Us</h3>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <span>💻</span>
+                    <a href="https://github.com/your-profile" target="_blank">GitHub</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <a href="https://wa.me/your-number" target="_blank">WhatsApp</a>
+                </div>
+                <div class="contact-item">
+                    <span>📷</span>
+                    <a href="https://instagram.com/your-profile" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Fetch email from localStorage and display it in the input
+        window.onload = function() {
+            const userEmail = localStorage.getItem('userEmail');
+            if (userEmail) {
+                document.getElementById('user-email').value = userEmail;
+            } else {
+                alert("No email found. Please log in first.");
+                window.location.href = "login.html"; // Redirect to login page if no email found
+            }
+        };
+
+        document.getElementById('submit-email').addEventListener('click', function() {
+            const email = document.getElementById('user-email').value;
+            if (email) {
+                window.location.href = "home24.html"; // Redirect to the next page
+            } else {
+                alert("Please enter a valid email.");
+            }
+        });
+    </script>
+</body>
+</html>
