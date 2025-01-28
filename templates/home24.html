@@ -97,6 +97,7 @@
             height: 500px;
             background: #ccecee;
         }
+
         .hero-image {
             position: absolute;
             right: 4rem;
@@ -125,10 +126,21 @@
             color: var(--primary-color);
         }
 
-        .hero-text {
-            color: white;
-            margin-bottom: 2rem;
-            line-height: 1.6;
+        .chat-bot-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .chat-bot-btn:hover {
+            background-color: #074c65;
         }
 
         /* Contact Section */
@@ -258,6 +270,7 @@
         <section class="hero">
             <div class="hero-content">
                 <h1 class="hero-title">Find the Good Life<br>With <span>Good Health.</span></h1>
+                <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/28/09/20250128094248-MPZ8P9FX.json" class="chat-bot-btn">Click Here to Chat with Bot...</a>
             </div>
             <div class="circle-decoration circle-1"></div>
             <div class="circle-decoration circle-2"></div>
